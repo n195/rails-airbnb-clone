@@ -1,4 +1,4 @@
 class Piece < ApplicationRecord
-  validates :name, :price, :creator, :creation_date, presence: :true
-
+  belongs_to :user
+  validates :name, :price, :creation_date, presence: :true
 end
