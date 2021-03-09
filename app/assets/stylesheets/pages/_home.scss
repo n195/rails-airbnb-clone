@@ -1,5 +1,72 @@
 .container {
   text-align: center;
-  font-family: helvetica;
   padding-top: 25px;
+}
+.max-height-100vh {
+  min-height: calc(100vh - 200px);
+}
+
+.row {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+  padding-bottom: 20px;
+}
+.art-card {
+  position: relative;
+  border-radius: 5px;
+  background: white;
+  box-shadow: 0 0 2px rgba(0,0,0,0.1);
+}
+
+.art-card > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  border-top-left-radius:5px ;
+  border-top-right-radius:5px ;
+}
+
+.art-card h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 9px;
+  margin-top: 3px;
+  text-align: right;
+}
+
+.art-card h3 {
+  font-size: 25px;
+  font-weight: bold;
+  position: absolute;
+  color: #fff;
+  margin-top: 3px;
+}
+
+.art-card p {
+  font-size: 10px;
+  opacity: .7;
+  margin: 0;
+  margin-right: 3px;
+  text-align: right;
+  padding-bottom: 10px;
+  line-height: 0em;
+}
+
+.art-card .art-card-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  margin-left: 9px;
+
+}
+
+.art-piece-pricing {
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  display: inline-block;
+  margin-left: 9px;
 }
