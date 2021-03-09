@@ -2,7 +2,7 @@ class PiecesController < ApplicationController
   before_action :set_piece, only: [:show, :edit, :update, :destroy]
 
   def index
-    @piece = Piece.all
+    @pieces = Piece.all
   end
 
   def show
@@ -21,9 +21,11 @@ class PiecesController < ApplicationController
 
   def create
     @piece = Piece.new(piece_params)
+    @piece.user = current_user
+
       if @piece.save
         flash[:success] = "piece successfully created"
-        redirect_to @piece_path
+        redirect_to piece_path(@piece)
       else
         flash[:error] = "Something went wrong"
         render 'new'
