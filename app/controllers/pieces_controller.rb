@@ -6,7 +6,6 @@ class PiecesController < ApplicationController
   end
 
   def show
-    @piece = Piece.find(params[:id])
   end
 
   def new
@@ -20,30 +19,27 @@ class PiecesController < ApplicationController
   #   redirect_to piece_path(@piece)
   # end
 
-
-   def create
-     @piece = Piece.new(params[:piece])
-       if @piece.save
+  def create
+    @piece = Piece.new(piece_params)
+      if @piece.save
         flash[:success] = "piece successfully created"
         redirect_to @piece_path
-       else
+      else
         flash[:error] = "Something went wrong"
         render 'new'
-   end
+      end
+  end
 
   def edit
-    @piece = Piece.find(params[:id])
   end
 
   def update
-    @piece = Piece.find(params[:id])
     @piece.update(piece_params)
 
     redirect_to piece_path(@piece)
   end
 
   def destroy
-    @piece = Piece.find(params[:id])
     @piece.destroy
 
     redirect_to pieces_path
@@ -52,10 +48,10 @@ class PiecesController < ApplicationController
   private
 
   def piece_params
-    params.require(:piece).permit(:name, :price, :creator, :creation_date, :description)
+    params.require(:piece).permit(:name, :price, :creation_date, :description)
   end
 
-  def set_restaurant
+  def set_piece
     @piece = Piece.find(params[:id])
   end
 end
