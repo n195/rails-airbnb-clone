@@ -1,6 +1,14 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
 
+def index
+	@booking = Booking.all
+end
+
+def new
+	@booking = Booking.new
+end
+
 def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
@@ -15,9 +23,11 @@ def create
 
 end
 
+def edit
+end
 
 def update
-    @booking.update(piece_params)
+    @booking.update(booking_params)
 
     redirect_to piece_path(@booking)
 end
@@ -32,14 +42,11 @@ end
 private
 
   def booking_params
-    params.require(:piece).permit(:name, :price, :creation_date, :description)
+    params.require(:booking).permit(:date)
   end
 
   def set_booking
     @booking = Booking.find(params[:id])
   end
-
-end
-
 
 end

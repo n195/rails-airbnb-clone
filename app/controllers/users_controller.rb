@@ -36,7 +36,7 @@ end
 private
 
   def user_params
-    params.require(:user).permit(:name, :price, :creation_date, :description)
+    params.require(:user).permit(:name, :email)
   end
 
   def set_piece
