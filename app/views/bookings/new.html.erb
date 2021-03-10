@@ -1,6 +1,6 @@
 <%= simple_form_for @booking do |f| %>
   <%= f.input :checkin, placeholder: "checkin-date", class: "example-date-input form-control", as: :date %>
   <%= f.input :checkout, placeholder: "checkout-date", as: :date  %>
-  <%= f.submit "Book The Artwork", class: "btn btn-primary" %>
+  <%= f.submit "Book The Artwork", class: "btn btn-primary", hint: "#{link_to 'Book The Artwork' }" %>
 <% end %>
 
