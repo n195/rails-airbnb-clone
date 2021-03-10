@@ -23,13 +23,13 @@ class PiecesController < ApplicationController
     @piece = Piece.new(piece_params)
     @piece.user = current_user
 
-      if @piece.save
-        flash[:success] = "piece successfully created"
-        redirect_to piece_path(@piece)
-      else
-        flash[:error] = "Something went wrong"
-        render 'new'
-      end
+    if @piece.save
+      flash[:success] = "piece successfully created"
+      redirect_to piece_path(@piece)
+    else
+      flash[:error] = "Something went wrong"
+      render 'new'
+    end
   end
 
   def edit
