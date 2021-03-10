@@ -2,7 +2,14 @@
   min-height: calc(100vh - 200px);
 }
 
-.new-form {
-width: 75%;
-border: 1px solid red;
+input {
+  background-color: #1a2634;
+  color: white;
+  border-radius: 25px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-right: 25px;
+  padding-left: 25px;
+  font-weight: bold;
+  margin-bottom: 16px;
 }
