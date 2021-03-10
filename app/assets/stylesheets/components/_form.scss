@@ -1,11 +1,8 @@
-.container-pieces {
-  text-align: center;
-  padding-top: 25px;
-  padding-bottom: 25px;
+.max-height-100vh {
+  min-height: calc(100vh - 200px);
 }
 
-.simple-form new-form {
-  align-items: center;
-  width: 60vw;
-  border: 1px solid red;
+.new-form {
+width: 75%;
+border: 1px solid red;
 }
