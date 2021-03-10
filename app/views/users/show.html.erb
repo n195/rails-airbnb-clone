@@ -1,0 +1,19 @@
+<div class="Profil">
+    <h1>Mon profil<h1>
+      <%= @user.first_name %>
+      <div class="pieces">
+        <% @pieces.each do |piece| %>
+        <%= piece.name %>
+        <%= piece.price %>
+        <%= piece.creation_date %>
+        <%= piece.description %>
+        <% end %>
+      </div>
+
+      <div class="bookings">
+        <% @bookings.each do |booking| %>
+        <%= booking.date %>
+        <%= booking.date %>
+        <% end %>
+      </div>
+</div>
