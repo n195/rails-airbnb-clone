@@ -1,7 +1,7 @@
 <div class="container max-height-100vh">
   <div class="card card-show">
     <%# <%= image_tag("michou.jpg", :alt => "photo-portrait")%>
-    <% if @piece.photo_url  %>
+    <% if @piece.photo_url.present?  %>
     <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%=@piece.photo_url%>');">coucou</div>
     <% else %>
     <%= image_tag("paysage.jpg", :alt => "photo-paysage") %>
@@ -13,8 +13,8 @@
     <div class="btn-show">
       <%= link_to "Delete", piece_path(@piece), method: :delete, class: "btn btn-info" %>
       <%= link_to "Edit", edit_piece_path(@piece), method: :get, class: "btn btn-info" %>
-      <%= link_to "Booking", edit_piece_path(@piece), method: :get, class: "btn btn-info" %>
 
+      <%= link_to "Booking",  new_piece_booking_path(@piece), method: :get, class: "btn btn-info" %>
     </div>
   </div>
 </div>
