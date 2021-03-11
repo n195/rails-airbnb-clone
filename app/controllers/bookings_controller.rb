@@ -12,12 +12,14 @@ def new
 end
 
 def create
+    @piece = Piece.find(params[:piece_id])
     @booking = Booking.new(booking_params)
     @booking.user = current_user
+    @booking.piece = @piece
 
     if @booking.save
         flash[:success] = "booking successfully created"
-        redirect_to booking_path(@booking)
+        redirect_to root_path
     else
         flash[:error] = "Something went wrong"
         render 'new'
@@ -46,9 +48,9 @@ private
 
   def booking_params
 
-    params.require(:booking).permit(:date)
+    params.require(:booking).permit(:date, :checkin, :checkout)
 
-    params.require(:piece).permit(:name, :price, :creation_date, :description)
+    # params.require(:piece).permit(:name, :price, :creation_date, :description)
 
   end
 
