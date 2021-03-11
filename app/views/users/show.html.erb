@@ -1,48 +1,64 @@
-<div class="Profil">
-  <h1>Mon profil</h1>
-  <div class="mes-infos">
-    <%= @user.first_name %>
-  </div>
-  <div class="pieces">
-    <% @pieces.each do |piece| %>
-      <div class="art-card">
-        <h3 class="art-piece-pricing">96€</h3>
-        <% if piece.photo_url.nil? %>
-        <img src="paysage.jpg" alt= "artpiece1", style= "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
-        <% else %>
-        <%= image_tag(piece.photo_url,  alt: "artpiece1", style: "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))") %>
-        <% end %>
-        <div class="art-piece-infos">
-          <div>
-            <h2>Title here</h2>
-          </div>
-          <p>Short description here!</p>
-          <%# <h4> <%= link_to "Louer cette oeuvre", piece_path(@piece)</h4> %>
+<div class="container max-height-100vh">
+  <div class="Profil">
+  <h1>Profil</h1>
+  <h2>Mes oeuvres</h2>
+    <div class="mes-infos">
+      <%= @user.first_name %>
+    </div>
+    <div class="row">
+      <% @pieces.each do |piece| %>
+        <div class="profile-card">
+          <h3 class="art-piece-pricing"><%= piece.price %> €</h3>
+            <% if piece.photo_url.present? %>
+            <%= image_tag(piece.photo_url,  alt: "artpiece1", style: "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))") %>
+            <% else %>
+            <%= image_tag("paysage.jpg", :alt => "photo-paysage") %>
+            <% end %>
+            <div class="art-piece-infos">
+              <h1><%= piece.name  %></h1>
+              <h3><%= piece.description %></h3>
+            </div>
         </div>
-      </div>
-
-    <% end %>
-  </div>
-  <div class="bookings">
-    <% @bookings_by_other_user.each do |booking| %>
-      <div class="art-card">
-        <h3 class="art-piece-pricing">96€</h3>
-        <% if booking.piece.photo_url.nil? %>
-        <img src="paysage.jpg" alt= "artpiece1", style= "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
-        <% else %>
-        <%= image_tag(booking.piece.photo_url,  alt: "artpiece1", style: "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))") %>
-        <% end %>
-        <div class="art-piece-infos">
-          <div>
-            <h2>Title here</h2>
-          </div>
-          <p>Short description here!</p>
-          <%# <h4> <%= link_to "Louer cette oeuvre", piece_path(@piece)</h4> %>
+      <% end %>
+    </div>
+        <h2>Oeuvres d'art réservées par d'autres personnes</h2>
+    <div class="row">
+      <% @bookings_by_other_user.each do |booking| %>
+        <div class="profile-card">
+          <h3 class="art-piece-pricing"><%= booking.piece.price %> €</h3>
+          <% if booking.piece.photo_url.present? %>
+            <%= image_tag(booking.piece.photo_url,  alt: "artpiece1", style: "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))") %>
+            <% else %>
+            <%= image_tag("paysage.jpg", :alt => "photo-paysage") %>
+            <% end %>
+            <div class="art-piece-infos">
+              <h1><%= booking.piece.name  %></h1>
+              <p><%= booking.piece.description %></p>
+              <h4>Du <%= booking.checkin %> au <%= booking.checkout %></h4>
+            </div>
         </div>
+      <% end %>
+    </div>
+     <h2>Les oeuvres que j'ai réservé</h2>
+      <div class="row">
+        <% @booked_pieces.each do |booking| %>
+        <div class="profile-card">
+          <h3 class="art-piece-pricing"><%= booking.piece.price %> €</h3>
+            <% if booking.piece.photo_url.present? %>
+            <%= image_tag(booking.piece.photo_url,  alt: "artpiece1", style: "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))") %>
+            <% else %>
+            <%= image_tag("paysage.jpg", :alt => "photo-paysage") %>
+            <% end %>
+          <div class="art-piece-infos">
+              <div>
+              <h1><%= booking.piece.name  %><h1>
+              <p><%= booking.piece.description %></p>
+              <h4>Du <%= booking.checkin %> au <%= booking.checkout %></h4>
+              </div>
+          </div>
+        </div>
+        <% end %>
       </div>
-      <p>Du <%= booking.checkin %> au <%= booking.checkout %></p>
-    <% end %>
+      <%= link_to "Retour au menu", pieces_path %>
+   </div>
   </div>
-  <%= link_to "Retour au menu", pieces_path %>
-
-</div>

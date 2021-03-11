@@ -27,11 +27,11 @@ class PiecesController < ApplicationController
 
     if @piece.save
       flash[:success] = "piece successfully created"
-      redirect_to piece_path(@piece)
     else
       flash[:error] = "Something went wrong"
       render 'new'
     end
+    redirect_to piece_path(@piece)
   end
 
   def edit
@@ -45,8 +45,7 @@ class PiecesController < ApplicationController
 
   def destroy
     @piece.destroy
-
-    redirect_to pieces_path
+    redirect_to root_path
   end
 
   private
