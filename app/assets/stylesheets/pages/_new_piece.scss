@@ -1,0 +1,26 @@
+.container-pieces {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+
+.new-form form {
+  background-color: white;
+  border-radius: 16px;
+  margin-bottom: 8px;
+  box-shadow: 0 0 2px rgba(0,0,0,0.1);
+  padding: 30px;
+}
+
+.form-group {
+  border: 1px solid white;
+}
+
+.form-control {
+  padding: 8px;
+  background-color: #f4f9f9;
+
+}
+

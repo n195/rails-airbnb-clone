@@ -1,0 +1,31 @@
+.max-height-100vh {
+  min-height: calc(100vh - 200px);
+}
+
+.card-show {
+  margin-top: 8px;
+  margin-bottom: 10px;
+}
+
+.btn-show {
+  margin: 15px;
+}
+
+p {
+  margin: 10px;
+}
+
+h2 {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+h4 {
+  font-style: oblique;
+  font-size: 16px;
+}
+
+img {
+  border-top-left-radius: 10px ;
+  border-top-right-radius: 10px ;
+}

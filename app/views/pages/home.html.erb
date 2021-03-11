@@ -1,9 +1,9 @@
 <div class="container max-height-100vh">
   <h1>Bienvenue sur My MasterPiece 🎨<h1>
-  <div class="btn btn-info"> Je veux mettre mon oeuvre en location </div>
+  <div class="btn btn-info"> <%= link_to "Mettre une oeuvre en location", new_piece_path(@piece)%> </div>
   <div class="row">
-    <% 10.times do %>
-      <%= render "shared/card_piece" %>
+    <% @pieces.each do |piece| %>
+      <%= render "shared/card_piece", piece: piece %>
     <% end %>
   </div>
 </div>

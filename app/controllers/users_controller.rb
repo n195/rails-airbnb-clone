@@ -27,7 +27,7 @@ end
 def destroy
     @user.destroy
 
-    redirect_to users_path
+    redirect_to user_path
 end
 
 def show
