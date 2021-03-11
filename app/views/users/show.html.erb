@@ -1,19 +1,23 @@
 <div class="Profil">
-    <h1>Mon profil<h1>
-      <%= @user.first_name %>
-      <div class="pieces">
-        <% @pieces.each do |piece| %>
-        <%= piece.name %>
-        <%= piece.price %>
-        <%= piece.creation_date %>
-        <%= piece.description %>
-        <% end %>
-      </div>
+  <h1>Mon profil</h1>
+  <div class="mes-infos">
+    <%= @user.first_name %>
+  </div>
+  <div class="pieces">
+    <% @pieces.each do |piece| %>
+      <%= piece.name %>
+      <%= piece.price %>
+      <%= piece.creation_date %>
+      <%= piece.description %>
+    <% end %>
+  </div>
+  <div class="bookings">
+    <% @bookings_by_other_user.each do |b| %>
+      <%= b.pieces.bookings_by_other_user %>
+      <%= b.bookings_by_other_user.first_name %>
+    <% end %>
+  </div>
+  <%= link_to "Retour au menu", pieces_path %>
 
-      <div class="bookings">
-        <% @bookings.each do |booking| %>
-        <%= booking.date %>
-        <%= booking.date %>
-        <% end %>
-      </div>
 </div>
+
