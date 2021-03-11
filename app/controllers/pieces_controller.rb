@@ -52,7 +52,7 @@ class PiecesController < ApplicationController
   private
 
   def piece_params
-    params.require(:piece).permit(:name, :price, :creation_date, :description, :image)
+    params.require(:piece).permit(:name, :price, :creation_date, :description, :photo_url)
   end
 
   def set_piece
