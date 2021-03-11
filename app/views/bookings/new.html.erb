@@ -1,5 +1,7 @@
 <%= simple_form_for [@piece, @booking] do |f| %>
-  <%= f.input :checkin, placeholder: "checkin-date", class: "example-date-input form-control", as: :date %>
-  <%= f.input :checkout, placeholder: "checkout-date", as: :date  %>
-  <%= f.submit "Book The Artwork", class: "btn btn-primary", hint: "#{link_to 'Book The Artwork', root_path }" %>
+  <%= f.input :checkin, placeholder: "checkin-date", as: :date%>
+  <%= f.input :checkout, placeholder: "checkout-date", as: :date%>
+  <%= f.submit "Book The Artwork", class: "btn btn-primary" %>
 <% end %>
+
+<!-- , hint: "#{link_to 'Book The Artwork' }" -->
