@@ -1,4 +1,3 @@
-<%= link_to piece_path(piece) do %>
 
 <div class="art-card">
   <h3 class="art-piece-pricing">96€</h3>
@@ -11,8 +10,6 @@
     <div>
       <h2>Title here</h2>
     </div>
-    <p>Short description here!</p>
-     <h4>Louer cette oeuvre</h4> </a>
+   <p><%= link_to "En savoir plus", piece_path(piece) %></p>
   </div>
 </div>
-<% end %>
