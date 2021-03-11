@@ -1,8 +1,10 @@
-<%= simple_form_for(piece) do |f| %>
-<%= f.input :name %>
-<%= f.input :price %>
-<%= f.input :creation_date %>
-<%= f.input :description %>
-<%= f.submit %>
 
-<% end %>
+    <%= simple_form_for(piece) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :price %>
+    <%= f.input :creation_date %>
+    <%= f.input :description %>
+    <%= f.input :photo_url, label: "Ton image" %>
+    <%= f.submit %>
+    <% end %>
+

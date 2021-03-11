@@ -1,8 +1,10 @@
 class PiecesController < ApplicationController
   before_action :set_piece, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @pieces = Piece.all
+    @user = current_user
+    @pieces = current_user.pieces
   end
 
   def show
@@ -50,7 +52,7 @@ class PiecesController < ApplicationController
   private
 
   def piece_params
-    params.require(:piece).permit(:name, :price, :creation_date, :description)
+    params.require(:piece).permit(:name, :price, :creation_date, :description, :photo_url)
   end
 
   def set_piece
