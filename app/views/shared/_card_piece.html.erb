@@ -1,9 +1,9 @@
 <div class="art-card">
   <h3 class="art-piece-pricing">96€</h3>
-  <% if piece.photo_url.nil? %>
-  <img src="paysage.jpg" alt= "artpiece1", style= "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
+  <% if piece.photo_url.present? %>
+    <%= image_tag(piece.photo_url,  alt: "artpiece1", style: "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))") %>
   <% else %>
-  <%= image_tag(piece.photo_url,  alt: "artpiece1", style: "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))") %>
+  <%= image_tag("paysage.jpg", :alt => "photo-paysage") %>
   <% end %>
   <div class="art-piece-infos">
     <div>
@@ -11,6 +11,5 @@
     </div>
     <p>Short description here!</p>
      <h4>Louer cette oeuvre</h4> </a>
-    <%# <h4> <%= link_to "Louer cette oeuvre", piece_path(@piece)</h4> %>
   </div>
 </div>
