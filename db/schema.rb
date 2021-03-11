@@ -36,7 +36,6 @@ ActiveRecord::Schema.define(version: 2021_03_10_145140) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
     t.string "photo_url"
-    t.string "creator"
     t.index ["user_id"], name: "index_pieces_on_user_id"
   end
 
