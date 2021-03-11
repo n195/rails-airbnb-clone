@@ -3,7 +3,8 @@ class PiecesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @pieces = Piece.all
+    @user = current_user
+    @pieces = current_user.pieces
   end
 
   def show
