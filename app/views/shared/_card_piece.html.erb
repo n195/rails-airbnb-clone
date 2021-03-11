@@ -1,3 +1,5 @@
+<%= link_to piece_path(piece) do %>
+
 <div class="art-card">
   <h3 class="art-piece-pricing">96€</h3>
   <% if piece.photo_url.nil? %>
@@ -14,3 +16,4 @@
     <%# <h4> <%= link_to "Louer cette oeuvre", piece_path(@piece)</h4> %>
   </div>
 </div>
+<% end %>
