@@ -1,11 +1,3 @@
-.container {
-  text-align: center;
-  padding-top: 25px;
-}
-
-.max-height-100vh {
-  min-height: calc(100vh - 200px);
-}
 
 .row {
   margin-top: 20px;
@@ -14,14 +6,15 @@
   grid-gap: 20px;
   padding-bottom: 20px;
 }
-.art-card {
+
+.profile-card {
   position: relative;
   border-radius: 5px;
   background: white;
   box-shadow: 0 0 2px rgba(0,0,0,0.1);
 }
 
-.art-card > img {
+.profile-card > img {
   height: 200px;
   width: 100%;
   object-fit: cover;
@@ -29,7 +22,7 @@
   border-top-right-radius:5px ;
 }
 
-.art-card h4 {
+.profile-card h4 {
   font-size: 12px;
   font-weight: bold;
   text-align: left;
@@ -37,7 +30,7 @@
   margin-bottom: 15px;
 }
 
-.art-card h2 {
+.profile-card h2 {
   font-size: 20px;
   font-weight: bold;
   margin-right: 9px;
@@ -45,7 +38,7 @@
   text-align: right;
 }
 
-.art-card h3 {
+.profile-card h3 {
   font-size: 25px;
   font-weight: bold;
   position: absolute;
@@ -53,14 +46,7 @@
   margin-top: 3px;
 }
 
-.art-card h5 {
-  font-size: 13px;
-  font-weight: bold;
-  color: #fff;
-  margin-top: 3px;
-}
-
-.art-card p {
+.profile-card p {
   font-size: 10px;
   opacity: .7;
   margin: 0;
@@ -70,7 +56,7 @@
   line-height: 0em;
 }
 
-.art-card .art-card-infos {
+.profile-card .profile-card-infos {
   padding: 16px;
   display: flex;
   justify-content: space-between;
