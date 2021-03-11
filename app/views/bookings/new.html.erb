@@ -1,7 +1,11 @@
-<%= simple_form_for [@piece, @booking] do |f| %>
-  <%= f.input :checkin, placeholder: "checkin-date", as: :date%>
-  <%= f.input :checkout, placeholder: "checkout-date", as: :date%>
-  <%= f.submit "Book The Artwork", class: "btn btn-primary" %>
-<% end %>
+<div class="container container-pieces max-height-100vh">
+  <div class="new_booking">
+  <%= simple_form_for [@piece, @booking] do |f| %>
+    <%= f.input :checkin, placeholder: "checkin-date", as: :date%>
+    <%= f.input :checkout, placeholder: "checkout-date", as: :date%>
+    <%= f.submit "Book The Artwork", class: "btn btn-primary" %>
+  <% end %>
+  </div>
+</div>
 
 <!-- , hint: "#{link_to 'Book The Artwork' }" -->
