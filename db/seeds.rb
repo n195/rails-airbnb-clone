@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts 'Cleaning DB'
+Piece.destroy_all
 User.destroy_all
-
 User.create(email: 'nona@test.fr', password: 'azerty')
 User.create(email: 'margaux@test.fr', password: 'azerty')
 User.create(email: 'pierre@test.fr', password: 'azerty')

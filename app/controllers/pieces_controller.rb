@@ -1,6 +1,6 @@
 class PiecesController < ApplicationController
   before_action :set_piece, only: [:show, :edit, :update, :destroy]
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @user = current_user
@@ -52,7 +52,7 @@ class PiecesController < ApplicationController
   private
 
   def piece_params
-    params.require(:piece).permit(:name, :price, :creation_date, :description)
+    params.require(:piece).permit(:name, :price, :creation_date, :description, :image)
   end
 
   def set_piece
