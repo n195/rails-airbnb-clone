@@ -7,6 +7,7 @@ def index
 end
 
 def new
+  @piece = Piece.find(params[:piece_id])
 	@booking = Booking.new
 end
 
