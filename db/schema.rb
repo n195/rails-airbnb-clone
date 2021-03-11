@@ -21,8 +21,6 @@ ActiveRecord::Schema.define(version: 2021_03_10_135338) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
     t.bigint "piece_id", null: false
-    t.integer "checkin"
-    t.integer "checkout"
     t.index ["piece_id"], name: "index_bookings_on_piece_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
