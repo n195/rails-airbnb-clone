@@ -5,16 +5,42 @@
   </div>
   <div class="pieces">
     <% @pieces.each do |piece| %>
-      <%= piece.name %>
-      <%= piece.price %>
-      <%= piece.creation_date %>
-      <%= piece.description %>
+      <div class="art-card">
+        <h3 class="art-piece-pricing">96€</h3>
+        <% if piece.photo_url.nil? %>
+        <img src="paysage.jpg" alt= "artpiece1", style= "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
+        <% else %>
+        <%= image_tag(piece.photo_url,  alt: "artpiece1", style: "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))") %>
+        <% end %>
+        <div class="art-piece-infos">
+          <div>
+            <h2>Title here</h2>
+          </div>
+          <p>Short description here!</p>
+          <%# <h4> <%= link_to "Louer cette oeuvre", piece_path(@piece)</h4> %>
+        </div>
+      </div>
+
     <% end %>
   </div>
   <div class="bookings">
-    <% @bookings_by_other_user.each do |b| %>
-      <%= b.pieces.bookings_by_other_user %>
-      <%= b.bookings_by_other_user.first_name %>
+    <% @bookings_by_other_user.each do |booking| %>
+      <div class="art-card">
+        <h3 class="art-piece-pricing">96€</h3>
+        <% if booking.piece.photo_url.nil? %>
+        <img src="paysage.jpg" alt= "artpiece1", style= "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
+        <% else %>
+        <%= image_tag(booking.piece.photo_url,  alt: "artpiece1", style: "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))") %>
+        <% end %>
+        <div class="art-piece-infos">
+          <div>
+            <h2>Title here</h2>
+          </div>
+          <p>Short description here!</p>
+          <%# <h4> <%= link_to "Louer cette oeuvre", piece_path(@piece)</h4> %>
+        </div>
+      </div>
+      <p>Du <%= booking.checkin %> au <%= booking.checkout %></p>
     <% end %>
   </div>
   <%= link_to "Retour au menu", pieces_path %>

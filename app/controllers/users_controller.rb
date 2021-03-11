@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:edit, :update, :destroy]
   def show
     @user = current_user
     @booked_pieces = current_user.bookings
@@ -42,9 +42,7 @@ private
     params.require(:user).permit(:name, :email)
   end
 
-  def set_piece
+  def set_user
     @user = User.find(params[:id])
   end
-
->>>>>>> master
 end
