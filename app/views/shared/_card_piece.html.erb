@@ -1,6 +1,10 @@
 <div class="art-card">
   <h3 class="art-piece-pricing">96€</h3>
-  <%= image_tag(piece.photo_url, alt: "artpiece1", style: "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))") %>
+  <% if piece.photo_url.nil? %>
+  <img src="paysage.jpg" alt= "artpiece1", style= "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
+  <% else %>
+  <%= image_tag(piece.photo_url,  alt: "artpiece1", style: "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))") %>
+  <% end %>
   <div class="art-piece-infos">
     <div>
       <h2>Title here</h2>
