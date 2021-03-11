@@ -1,5 +1,11 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:edit, :update, :destroy]
+  def show
+    @user = current_user
+    @booked_pieces = current_user.bookings
+    @pieces = current_user.pieces
+    @bookings_by_other_user = Booking.where(piece: @pieces)
+  end
 
 def new
 	@user = User.new
@@ -30,17 +36,13 @@ def destroy
     redirect_to user_path
 end
 
-def show
-end
-
 private
 
   def user_params
     params.require(:user).permit(:name, :email)
   end
 
-  def set_piece
+  def set_user
     @user = User.find(params[:id])
   end
-
 end
