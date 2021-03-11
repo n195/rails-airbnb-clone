@@ -6,7 +6,9 @@ def new
 end
 
 def create
-    @user = User.new(user_params)
+    @user = User.new(User_params)
+    @user.user = current_user
+
     if @user.save
         flash[:success] = "user successfully created"
         redirect_to user_path(@user)
@@ -34,7 +36,7 @@ end
 private
 
   def user_params
-    params.require(:user).permit(:name, :price, :creation_date, :description)
+    params.require(:user).permit(:name, :email)
   end
 
   def set_piece
