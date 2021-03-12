@@ -1,6 +1,6 @@
 <div class="container max-height-100vh">
   <div class="Profil">
-  <h1>Profil</h1>
+  <h1>Mon profil </h1>
   <h2>Mes oeuvres</h2>
     <div class="mes-infos">
       <%= @user.first_name %>
@@ -21,7 +21,7 @@
         </div>
       <% end %>
     </div>
-        <h2>Oeuvres d'art réservées par d'autres personnes</h2>
+        <h2>Réservations</h2>
     <div class="row">
       <% @bookings_by_other_user.each do |booking| %>
         <div class="profile-card">
@@ -58,6 +58,6 @@
         </div>
         <% end %>
       </div>
-      <%= link_to "Retour au menu", root_path %>
+      <h4><%= link_to "Retour au menu", root_path %></h4>
    </div>
   </div>
