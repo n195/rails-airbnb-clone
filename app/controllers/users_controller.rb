@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:edit, :update, :destroy]
-  def show
+  def profile
     @user = current_user
     @booked_pieces = current_user.bookings
     @pieces = current_user.pieces

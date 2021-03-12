@@ -1,7 +1,7 @@
 <div class="container max-height-100vh">
   <div class="card card-show">
     <% if @piece.photo_url.present?  %>
-    <div class="banner" style="background-image: url('<%=@piece.photo_url%>');"></div>
+    <%= image_tag @piece.photo_url %>
     <% else %>
     <%= image_tag("paysage.jpg", :alt => "photo-paysage") %>
     <% end %>
@@ -19,3 +19,9 @@
     </div>
   </div>
 </div>
+
+
+    <%# border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    max-height: 100vh;
+    object-fit: cover; %>
