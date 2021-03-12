@@ -1,8 +1,8 @@
 <div class="container container-pieces max-height-100vh">
-    <ul>
+  <div>
     <h1> Mes oeuvres 👨‍🎨 </h1>
       <% @pieces.each do |piece| %>
       <%= render "shared/card_piece", piece: piece %>
     <% end %>
-    </ul>
+  </div>
 </div>
