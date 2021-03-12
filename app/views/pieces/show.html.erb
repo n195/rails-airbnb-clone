@@ -1,11 +1,10 @@
 <div class="container max-height-100vh">
   <div class="card card-show">
     <% if @piece.photo_url.present?  %>
-    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%=@piece.photo_url%>');"></div>
+    <div class="banner" style="background-image: url('<%=@piece.photo_url%>');"></div>
     <% else %>
     <%= image_tag("paysage.jpg", :alt => "photo-paysage") %>
     <% end %>
-
     <h1><%= @piece.name %></h1>
     <h2><%= @piece.price %>€</h2>
     <h4><%= @piece.creation_date %> After Jesus Death</h4>
