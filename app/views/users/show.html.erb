@@ -15,8 +15,8 @@
             <%= image_tag("paysage.jpg", :alt => "photo-paysage") %>
             <% end %>
             <div class="art-piece-infos">
-              <h1><%= piece.name  %></h1>
-              <h3><%= piece.description %></h3>
+              <h1><%= link_to piece.name, piece_path(piece) %></h1>
+              <p><%= piece.description %></p>
             </div>
         </div>
       <% end %>
@@ -32,8 +32,8 @@
             <%= image_tag("paysage.jpg", :alt => "photo-paysage") %>
             <% end %>
             <div class="art-piece-infos">
-              <h1><%= booking.piece.name  %></h1>
-              <p><%= booking.piece.description %></p>
+                <%# <h1><%= link_to piece.name, piece_path(piece) %>
+                <h1><%= booking.piece.name  %></h1>
               <h4>Du <%= booking.checkin %> au <%= booking.checkout %></h4>
             </div>
         </div>
@@ -52,13 +52,12 @@
           <div class="art-piece-infos">
               <div>
               <h1><%= booking.piece.name  %><h1>
-              <p><%= booking.piece.description %></p>
               <h4>Du <%= booking.checkin %> au <%= booking.checkout %></h4>
               </div>
           </div>
         </div>
         <% end %>
       </div>
-      <%= link_to "Retour au menu", pieces_path %>
+      <%= link_to "Retour au menu", root_path %>
    </div>
   </div>
