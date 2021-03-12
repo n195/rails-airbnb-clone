@@ -3,7 +3,7 @@
     <h2>Nouvelle réservation 📆</h2>
 
   <%= simple_form_for [@piece, @booking] do |f| %>
-    <h2><%= @piece.name %></h2>
+    <h2>"<%= @piece.name %>"</h2>
     <h3><%= @piece.price %> € </h3>
     <%= f.input :checkin, placeholder: "checkin-date", as: :date%>
     <%= f.input :checkout, placeholder: "checkout-date", as: :date%>
