@@ -25,14 +25,16 @@ h4 {
   font-size: 16px;
 }
 
-.banner {
-  height: 100px;
-  width: 100%;
-  border-top-left-radius:5px ;
-  border-top-right-radius:5px ;
-}
+// .banner {
+//   border-top-left-radius: 15px;
+//   border-top-right-radius: 15px;
+//   max-height: 100vh;
+//   object-fit: cover
+// }
 
 img {
-  border-top-left-radius:15px ;
-  border-top-right-radius:15px ;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  max-height: 100vh;
+  object-fit: cover
 }
