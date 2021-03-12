@@ -17,14 +17,7 @@ def create
     @booking.user = current_user
     @booking.piece = @piece
 
-    if @booking.save
-        flash[:success] = "booking successfully created"
-        redirect_to root_path
-    else
-        flash[:error] = "Something went wrong"
-        render 'new'
-    end
-
+    redirect_to root_path, notice: 'Votres reservation a bien été enregistrée'
 end
 
 
