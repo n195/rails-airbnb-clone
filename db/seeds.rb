@@ -44,7 +44,7 @@ puts "Pieces: #{Piece.count}"
 Booking.create!(
   date: 2022,
   user: pierre,
-  piece: piece_one
+  piece: Piece.first
 )
 
 
@@ -52,7 +52,7 @@ Booking.create!(
 Booking.create!(
   date: 2023,
   user: margaux,
-  piece: piece_two
+  piece: Piece.second
 )
 
 puts "Bookings: #{Booking.count}"
