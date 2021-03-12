@@ -1,18 +1,19 @@
-<%= form_tag root_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a piece"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
-
 
 
 <div class="container max-height-100vh">
   <h1>Bienvenue sur My MasterPiece 🎨<h1>
-  <div class="btn btn-info"> <%= link_to "Mettre mon oeuvre en location", new_piece_path(@piece)%> </div>
-  <div class="btn btn-info"> <%= link_to "Rechercher"%> </div>
+
+  <div class="">
+  <%= form_tag root_path, method: :get, class:"d-flex" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a piece"%>
+  <%= submit_tag "🔎", class: "btn " %>
+<% end %>
+
+
+  </div>
 
 
   <div class="row">
